@@ -10,26 +10,24 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.util.Random;
+import java.io.IOException;
 public class MainController {
 	@FXML //like a via, connects fxml to maincontroller
-	private Button signup;
+	private Button signup,login;
 	@FXML
-	private Pane change;
-	//change.setVisible(false);
-	public void signupPage(ActionEvent event) throws Exception{
+	private Pane change1,change2;
+	
+	public void signupPage() throws IOException{
+		//Stage stage1=(Stage)signup.getScene().getWindow();
 		
-		{
-			Stage arg0=new Stage();
-			Parent root=FXMLLoader.load(getClass().getResource("/application/signup.fxml"));
-			Scene scene=new Scene(root,700,700);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			arg0.setTitle("FoodFox"); //arg0 is the primary stage
-			arg0.setScene(scene);
-			//arg0.setResizable(false);
-			arg0.show();
-		}
+		change1.setVisible(false);
+		change2.setVisible(true);
+	}
+	public void loginPage() throws IOException{
+		//Stage stage2=(Stage)login.getScene().getWindow();
 		
+		change2.setVisible(false);
+		change1.setVisible(true);
 	}
 }
 
