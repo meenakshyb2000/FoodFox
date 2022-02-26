@@ -1,9 +1,12 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#outer{
-}
-#signup{
-	-fx-border-color: #db37e7;
-	-fx-border-radius: 5px;
-	-fx-background-color: white;
+.primary-color{
+	-fx-background-color : #915F6D;
 }
 
+.secondary-color{
+	-fx-background-color : #000000;
+}
+
+.button{
+	-fx-background-color : #D4AF37;
+	-fx-background-radius: 30;
+}
