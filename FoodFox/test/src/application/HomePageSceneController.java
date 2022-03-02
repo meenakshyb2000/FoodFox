@@ -17,7 +17,23 @@ public class HomePageSceneController {
 	// Event Listener on Button.onAction
 	@FXML
 	public void rest1Clicked(ActionEvent event) {
-			System.out.println("Hello Restaurant 1");
+	try
+        {
+         Stage stage=(Stage) logout.getScene().getWindow();
+         stage.close();
+         Stage arg0=new Stage();
+         Parent root=FXMLLoader.load(getClass().getResource("/application/SelectionPageScene.fxml"));
+	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
+	 Scene scene=new Scene(root,1300,700);
+         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+         arg0.setScene(scene);
+         arg0.setResizable(false);
+	 arg0.show();
+        }
+        catch(IOException e) 
+        {
+			e.printStackTrace();
+	}
 	}
 	
 	@FXML
@@ -45,8 +61,8 @@ public class HomePageSceneController {
 	}
 	@FXML
 	public void cartbtn(ActionEvent event) {
-			try
-     {
+	try
+        {
          Stage stage=(Stage) logout.getScene().getWindow();
          stage.close();
          Stage arg0=new Stage();
@@ -57,11 +73,11 @@ public class HomePageSceneController {
          arg0.setScene(scene);
          arg0.setResizable(false);
 	 arg0.show();
-     }
+        }
         catch(IOException e) 
-                {
+        {
 			e.printStackTrace();
-		}
+	}
 	}
         public void accountbtn(ActionEvent event) {
 	try
@@ -85,7 +101,7 @@ public class HomePageSceneController {
         @FXML
 	public void logout(ActionEvent event) {
 	try
-     {
+        {
          Stage stage=(Stage) logout.getScene().getWindow();
          stage.close();
          Stage arg0=new Stage();
@@ -96,11 +112,11 @@ public class HomePageSceneController {
          arg0.setScene(scene);
          arg0.setResizable(false);
 	 arg0.show();
-     }
-     catch(IOException e) 
-                {
+        }
+        catch(IOException e) 
+        {
 			e.printStackTrace();
-		}	
+	}	
 	}
         
 }
