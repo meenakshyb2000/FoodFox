@@ -161,19 +161,13 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
         String fname=signupfname.getText();
         String lname=signuplname.getText();
        String email=signupemail.getText();
-       String mphone=signupmobile.getText();
-       //try{
-           int phone=Integer.valueOf(mphone);
-       //}
-       //catch(Exception e){
-           //JOptionPane.showMessageDialog(null,"Enter a valid Contact Number");
-       //}
+       String phone=signupmobile.getText();
        String username=signupuname.getText();
       String password=signuppass.getText();
       String confirmpassword=signupconfirmpass.getText();
       String location=(String)locationBox.getValue();
       
-       if(fname.equals("")||lname.equals("")||email.equals("")||mphone.equals("")||password.equals("")||confirmpassword.equals("")||location.equals(""))
+       if(fname.equals("")||lname.equals("")||email.equals("")||phone.equals("")||password.equals("")||confirmpassword.equals("")||location.equals(""))
          JOptionPane.showMessageDialog(null,"Blank fields found!!");
        else if(!password.equals(confirmpassword))
             JOptionPane.showMessageDialog(null,"Passwords do not match");
@@ -202,7 +196,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
             
             pst.setString(2, fname);
             pst.setString(3, lname);
-            pst.setInt(4, phone);
+            pst.setString(4, phone);
             pst.setString(5, email);
             pst.setString(6, location);
             pst.setInt(7, 50);
@@ -230,7 +224,8 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
             stage.close();
             FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("HomePageScene.fxml"));
             Parent root=(Parent)fxmlloader.load();
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root,1300,700));
+            //new Scene(root,1300,700);
             stage.setTitle("FoodFox");
             stage.show();
            
