@@ -30,6 +30,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.UUID;
+import javafx.scene.Node;
 import javafx.scene.control.PasswordField;
 public class LoginController implements Initializable{
 	
@@ -119,18 +120,24 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
  pst=con.prepareStatement("select * from Customer where CUser=? and CPswd=?");
  pst.setString(1, username);
  pst.setString(2, password);
+ 
  rs=pst.executeQuery();
  if(rs.next())
  {
      System.out.println("Login Success");
+     String name=(String)rs.getString(2);
      try
      {
-         Stage stage=(Stage) submit1.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/HomePageScene.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/HomePageScene.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         arg0.setTitle("FoodFox");
+         Scene scene=new Scene(root,1300,700);
+         HomePageSceneController controller=loader.getController();
+         controller.getID(name);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -219,15 +226,21 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
             pst.setString(1, C_ID);
             pst.execute();
             
-            JOptionPane.showMessageDialog(null,"Sign Up Successful!!!");
-            Stage stage=(Stage) submit2.getScene().getWindow();
-            stage.close();
-            FXMLLoader fxmlloader= new FXMLLoader(getClass().getResource("HomePageScene.fxml"));
-            Parent root=(Parent)fxmlloader.load();
-            stage.setScene(new Scene(root,1300,700));
-            //new Scene(root,1300,700);
-            stage.setTitle("FoodFox");
-            stage.show();
+            
+             FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("/application/HomePageScene.fxml"));
+
+            Parent root=loader.load();
+            Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            arg0.setTitle("FoodFox");
+            Scene scene=new Scene(root,1300,700);
+            HomePageSceneController controller=loader.getController();
+            controller.getID(fname);
+            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            arg0.setScene(scene);
+            arg0.setResizable(false);
+            arg0.show();
            
          }
            }catch(ClassNotFoundException | SQLException e)
