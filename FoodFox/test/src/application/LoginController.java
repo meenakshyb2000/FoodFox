@@ -116,7 +116,7 @@ public class LoginController implements Initializable{
  {
  Class.forName("com.mysql.cj.jdbc.Driver");
 
-con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
  pst=con.prepareStatement("select * from Customer where CUser=? and CPswd=?");
  pst.setString(1, username);
  pst.setString(2, password);
@@ -125,7 +125,13 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
  if(rs.next())
  {
      System.out.println("Login Success");
-     String name=(String)rs.getString(2);
+     String fname= (String)rs.getString(2);
+     String lname = (String)rs.getString(3);
+     String phone =(String)rs.getString(4); 
+     String email =  (String)rs.getString(5);
+     String location = (String)rs.getString(6);
+     String user =  (String)rs.getString(8);
+     int pts = 50;
      try
      {
          FXMLLoader loader=new FXMLLoader();
@@ -137,7 +143,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
          arg0.setTitle("FoodFox");
          Scene scene=new Scene(root,1300,700);
          HomePageSceneController controller=loader.getController();
-         controller.getID(name);
+         controller.getID(fname, lname, phone, email, location, user, 50);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -185,7 +191,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
              //C_ID=UUID.randomUUID().toString();
 //             System.out.println(C_ID);
            Class.forName("com.mysql.cj.jdbc.Driver");
-          con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+          con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
           
           String query3="select * from Customer where cmail=?";
           
@@ -227,16 +233,18 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
             pst.execute();
             
             
-             FXMLLoader loader=new FXMLLoader();
+            FXMLLoader loader=new FXMLLoader();
             loader.setLocation(getClass().getResource("/application/HomePageScene.fxml"));
-
+            
             Parent root=loader.load();
             Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
 
             arg0.setTitle("FoodFox");
             Scene scene=new Scene(root,1300,700);
+            
             HomePageSceneController controller=loader.getController();
-            controller.getID(fname);
+            controller.getID(fname, lname, phone, email, location, username, 50);
+            
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             arg0.setScene(scene);
             arg0.setResizable(false);
