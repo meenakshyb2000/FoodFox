@@ -20,12 +20,20 @@ public class HomePageSceneController {
         private Label mb;
 	// Event Listener on Button.onAction
 	
-String user;
-public void getID(String loginuser)
+String cid, fname, lname, phone, email, location, username;
+int pts;
+public void getID(String id, String a,String b,String c,String d,String e, String f, int g)
 {
 
-    user=loginuser;
-    mb.setText("Hello, "+user);
+    cid = id;
+	fname = a;
+    lname = b;
+    phone = c;
+    email = d;
+    location = e;
+    username = f;
+    pts = g;
+    mb.setText("Hello, "+fname);
 }
         @FXML
 	public void rest1Clicked(ActionEvent event) {
@@ -71,7 +79,7 @@ public void getID(String loginuser)
 	}
         @FXML
 	public void rest6Clicked(ActionEvent event) {
-			System.out.println("Hello Restaurant 1");
+			System.out.println("Hello Restaurant 6");
 	}
 	@FXML
 	public void cartbtn(ActionEvent event) {
@@ -81,7 +89,12 @@ public void getID(String loginuser)
          loader.setLocation(getClass().getResource("/application/cart.fxml"));
          
          Parent root=loader.load();
-	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+	     Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+	 
+	     CartController controller=loader.getController();
+	     System.out.println("home page");
+	     System.out.println(fname);
+         controller.getID(cid, fname, lname, phone, email, location, username, 50);
          
          arg0.setTitle("FoodFox");
          Scene scene=new Scene(root,1300,700);
@@ -103,6 +116,9 @@ public void getID(String loginuser)
          
          Parent root=loader.load();
 	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+	 
+	    ProfilePageController controller=loader.getController();
+        controller.getID(cid, fname, lname, phone, email, location, username, 50);
          
          arg0.setTitle("FoodFox");
          Scene scene=new Scene(root,1300,700);
