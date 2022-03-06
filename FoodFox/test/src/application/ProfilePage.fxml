@@ -56,12 +56,12 @@
             <Font name="Ink Free" size="20.0" />
          </font>
       </Button>
-      <Label layoutX="262.0" layoutY="86.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5; -fx-opacity: 0.7;" text="   H e l l o   F i r s t   L a s t   " textFill="#915f6d">
+      <Label fx:id="mb2" layoutX="262.0" layoutY="86.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5; -fx-opacity: 0.7;" text="   H e l l o   F i r s t   L a s t   " textFill="#915f6d">
          <font>
             <Font name="Gabriola" size="35.0" />
          </font>
       </Label>
-      <Label layoutX="256.0" layoutY="80.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="   H e l l o   F i r s t   L a s t   " textFill="WHITE">
+      <Label fx:id="mb1" layoutX="256.0" layoutY="80.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="   H e l l o   F i r s t   L a s t   " textFill="WHITE">
          <font>
             <Font name="Gabriola" size="35.0" />
          </font>
