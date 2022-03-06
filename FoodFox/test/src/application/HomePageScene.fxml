@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -16,31 +17,35 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageSceneController">
    <children>
       <Line endX="99.0" endY="-10.0" layoutX="-86.0" layoutY="27.0" startX="98.0" startY="652.0" stroke="#d4af37" strokeWidth="2.0" />
       <Line endX="100.0" endY="-6.0" layoutX="-77.0" layoutY="34.0" startX="100.0" startY="655.0" stroke="#d4af37" strokeWidth="2.0" />
       <Line endX="1333.0" endY="341.0" layoutX="-66.0" layoutY="349.0" startX="90.0" startY="341.0" stroke="#d4af37" strokeWidth="2.0" />
-      <Button layoutX="34.0" layoutY="612.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="243.0" style="-fx-background-color: #915f6d;" text="h o m e  " textFill="#fcfcfc">
-         <font>
-            <Font name="Ink Free" size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="275.0" layoutY="612.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="s e a r c h" textFill="WHITE">
-         <font>
-            <Font name="Ink Free" size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="761.0" layoutY="612.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="c a r t" textFill="WHITE">
-         <font>
-            <Font name="Ink Free" size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="518.0" layoutY="612.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="a c c o u n t" textFill="WHITE">
-         <font>
-            <Font name="Ink Free" size="20.0" />
-         </font>
-      </Button>
+      <HBox layoutX="34.0" layoutY="612.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="243.0" style="-fx-background-color: #915f6d;" text="h o m e  " textFill="#fcfcfc">
+               <font>
+                  <Font name="Ink Free" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="s e a r c h" textFill="WHITE">
+               <font>
+                  <Font name="Ink Free" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="accountbtn" mnemonicParsing="false" onAction="#accountbtn" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="a c c o u n t" textFill="WHITE">
+               <font>
+                  <Font name="Ink Free" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="cartbtn" mnemonicParsing="false" onAction="#cartbtn" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 0;" text="c a r t" textFill="WHITE">
+               <font>
+                  <Font name="Ink Free" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
       <Circle layoutX="1170.0" layoutY="82.0" radius="50.0" stroke="#d4af37" strokeType="INSIDE" strokeWidth="1.5" />
       <Label layoutX="1137.0" layoutY="32.0" text="f" textFill="#d4af37">
          <font>
@@ -68,7 +73,7 @@
          </font>
       </Label>
       <Line endX="1332.0" endY="341.0" layoutX="-77.0" layoutY="339.0" startX="90.0" startY="341.0" stroke="#d4af37" strokeWidth="2.0" />
-      <Button layoutX="1002.0" layoutY="612.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d;" text="l o g   o u t" textFill="WHITE">
+      <Button fx:id="logout" layoutX="1002.0" layoutY="612.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d;" text="l o g   o u t" textFill="WHITE">
          <font>
             <Font name="Ink Free" size="20.0" />
          </font>
@@ -80,7 +85,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/pizzahut.png" />
+                  <Image url="@../img/pizzahut.PNG" />
                </image>
             </ImageView>
          </graphic>
@@ -92,7 +97,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/mcdonalds.png" />
+                  <Image url="@../img/mcdonalds.PNG" />
                </image>
             </ImageView>
          </graphic>
@@ -104,7 +109,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/sweetpie.png" />
+                  <Image url="@../img/sweetpie.PNG" />
                </image>
             </ImageView>
          </graphic>
@@ -116,7 +121,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/gazebo.png" />
+                  <Image url="@../img/gazebo.png" />
                </image>
             </ImageView>
          </graphic>
@@ -128,7 +133,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/ramees.png" />
+                  <Image url="@../img/ramees.PNG" />
                </image>
             </ImageView>
          </graphic>
@@ -140,7 +145,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" onDragDetected="#rest6Clicked" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/louise.png" />
+                  <Image url="@../img/louise.PNG" />
                </image>
             </ImageView>
          </graphic>
@@ -153,12 +158,12 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/cake.png" />
+                  <Image url="@../img/cake.PNG" />
                </image>
                <effect>
                   <InnerShadow blurType="ONE_PASS_BOX" choke="0.6">
                      <color>
-                        <Color red="0.8313725590705872" green="0.686274528503418" blue="0.21568627655506134" />
+                        <Color blue="0.21568627655506134" green="0.686274528503418" red="0.8313725590705872" />
                      </color>
                      <input>
                         <InnerShadow blurType="TWO_PASS_BOX" choke="1.0" />
@@ -175,7 +180,7 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/burger.png" />
+                  <Image url="@../img/burger.PNG" />
                </image>
                <effect>
                   <InnerShadow blurType="ONE_PASS_BOX" choke="0.6">
@@ -183,7 +188,7 @@
                         <InnerShadow blurType="TWO_PASS_BOX" choke="1.0" />
                      </input>
                      <color>
-                        <Color red="0.8313725590705872" green="0.686274528503418" blue="0.21568627655506134" />
+                        <Color blue="0.21568627655506134" green="0.686274528503418" red="0.8313725590705872" />
                      </color>
                   </InnerShadow>
                </effect>
@@ -197,12 +202,12 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/biriyani.png" />
+                  <Image url="@../img/biriyani.PNG" />
                </image>
                <effect>
                   <InnerShadow blurType="ONE_PASS_BOX" choke="0.6">
                      <color>
-                        <Color red="0.8313725590705872" green="0.686274528503418" blue="0.21568627655506134" />
+                        <Color blue="0.21568627655506134" green="0.686274528503418" red="0.8313725590705872" />
                      </color>
                      <input>
                         <InnerShadow blurType="TWO_PASS_BOX" choke="1.0" />
@@ -219,12 +224,12 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/pizza.png" />
+                  <Image url="@../img/pizza.PNG" />
                </image>
                <effect>
                   <InnerShadow blurType="ONE_PASS_BOX" choke="0.6">
                      <color>
-                        <Color red="0.8313725590705872" green="0.686274528503418" blue="0.21568627655506134" />
+                        <Color blue="0.21568627655506134" green="0.686274528503418" red="0.8313725590705872" />
                      </color>
                      <input>
                         <InnerShadow blurType="TWO_PASS_BOX" choke="1.0" />
@@ -262,14 +267,14 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </fill>
       </Line>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="701.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutY="701.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
       <Line endX="100.0" endY="3.0" layoutX="910.0" layoutY="376.0" rotate="90.0" startX="100.0" startY="416.0" stroke="#d4af37" strokeWidth="1.5" />
       <Button contentDisplay="TOP" layoutX="927.0" layoutY="288.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="92.0" style="-fx-border-radius: 100; -fx-background-color: #000000; -fx-background-radius: 100;" textAlignment="CENTER">
          <font>
@@ -278,12 +283,12 @@
          <graphic>
             <ImageView fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/images/pizza.png" />
+                  <Image url="@../img/pizza.PNG" />
                </image>
                <effect>
                   <InnerShadow blurType="ONE_PASS_BOX" choke="0.6">
                      <color>
-                        <Color red="0.8313725590705872" green="0.686274528503418" blue="0.21568627655506134" />
+                        <Color blue="0.21568627655506134" green="0.686274528503418" red="0.8313725590705872" />
                      </color>
                      <input>
                         <InnerShadow blurType="TWO_PASS_BOX" choke="1.0" />
@@ -304,7 +309,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -322,7 +327,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -340,7 +345,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -358,7 +363,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -376,7 +381,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -394,7 +399,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -412,7 +417,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -430,7 +435,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -448,7 +453,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -466,7 +471,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -484,7 +489,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -502,7 +507,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -520,7 +525,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -538,7 +543,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -556,7 +561,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -574,7 +579,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -592,7 +597,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -610,7 +615,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -628,7 +633,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -646,7 +651,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -664,7 +669,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -682,7 +687,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -700,7 +705,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -709,4 +714,3 @@
       </Line>
    </children>
 </AnchorPane>
-
