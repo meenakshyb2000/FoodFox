@@ -61,7 +61,7 @@
             <Font name="Cambria" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="103.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add1" layoutX="103.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add1" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -73,14 +73,14 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="101.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add6" layoutX="101.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add6" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
       </Button>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="83.0" layoutY="127.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F01.png" />
+            <Image url="@../img/R01F01.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -88,7 +88,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="82.0" layoutY="402.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F06.png" />
+            <Image url="@../img/R01F06.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -101,7 +101,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="921.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add5" layoutX="921.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add5" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -113,7 +113,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="919.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add10" layoutX="919.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add10" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -125,7 +125,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="517.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add3" layoutX="517.0" layoutY="327.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add3" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -137,19 +137,19 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="515.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add8" layoutX="515.0" layoutY="602.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add8" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
       </Button>
       <Rectangle arcHeight="15.0" arcWidth="15.0" height="57.0" layoutX="1092.5" layoutY="365.0" stroke="#915f6d" strokeType="INSIDE" width="142.0" />
-      <Button layoutX="1097.0" layoutY="370.0" mnemonicParsing="false" style="-fx-background-color: #915f6d; -fx-background-radius: 4;" text="GO TO CART" textFill="WHITE">
+      <Button fx:id="cartbtn" layoutX="1097.0" layoutY="370.0" mnemonicParsing="false" onAction="#cartbtn" style="-fx-background-color: #915f6d; -fx-background-radius: 4;" text="GO TO CART" textFill="WHITE">
          <font>
             <Font name="Gabriola" size="24.0" />
          </font>
       </Button>
       <Rectangle arcHeight="15.0" arcWidth="15.0" height="57.0" layoutX="1093.5" layoutY="278.0" stroke="#915f6d" strokeType="INSIDE" width="142.0" />
-      <Button layoutX="1097.5" layoutY="283.0" mnemonicParsing="false" style="-fx-background-color: #915f6d; -fx-background-radius: 4;" text="    H O M E     " textFill="WHITE">
+      <Button fx:id="homebtn" layoutX="1097.5" layoutY="283.0" mnemonicParsing="false" onAction="#homebtn" style="-fx-background-color: #915f6d; -fx-background-radius: 4;" text="    H O M E     " textFill="WHITE">
          <font>
             <Font name="Gabriola" size="24.0" />
          </font>
@@ -161,7 +161,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="311.0" layoutY="328.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add2" layoutX="311.0" layoutY="328.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add2" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -173,7 +173,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="309.0" layoutY="603.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add7" layoutX="309.0" layoutY="603.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add7" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -185,7 +185,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="715.0" layoutY="328.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add4" layoutX="715.0" layoutY="328.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add4" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -197,7 +197,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="713.0" layoutY="603.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
+      <Button fx:id="add9" layoutX="713.0" layoutY="603.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#add9" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #000000; -fx-border-color: #d4af37; -fx-border-radius: 3;" text="A D D" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
@@ -214,7 +214,7 @@
       </Label>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="291.0" layoutY="128.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F02.png" />
+            <Image url="@../img/R01F02.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -222,7 +222,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="497.0" layoutY="127.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F03.png" />
+            <Image url="@../img/R01F03.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -230,7 +230,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="695.0" layoutY="128.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F04.png" />
+            <Image url="@../img/R01F04.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -238,7 +238,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="901.0" layoutY="127.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F05.png" />
+            <Image url="@../img/R01F05.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -246,7 +246,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="289.0" layoutY="403.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F07.png" />
+            <Image url="@../img/R01F07.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -254,7 +254,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="495.0" layoutY="402.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F08.png" />
+            <Image url="@../img/R01F08.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -262,7 +262,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="693.0" layoutY="403.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F09.png" />
+            <Image url="@../img/R01F09.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
@@ -270,7 +270,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="899.0" layoutY="402.0">
          <image>
-            <Image url="@../../../../Desktop/images/R01F10.png" />
+            <Image url="@../img/R01F10.png" />
          </image>
          <effect>
             <InnerShadow blurType="TWO_PASS_BOX" choke="0.3" />
