@@ -5,26 +5,40 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
 
 public class HomePageSceneController {
 
 	@FXML
 	private Button buttonRest1, buttonRest2, buttonRest3, buttonRest4, buttonRest5, buttonRest6,logout,cartbtn;
-	
-	// Event Listener on Button.onAction
 	@FXML
+        private Label mb;
+	// Event Listener on Button.onAction
+	
+String user;
+public void getID(String loginuser)
+{
+
+    user=loginuser;
+    mb.setText("Hello, "+user);
+}
+        @FXML
 	public void rest1Clicked(ActionEvent event) {
 	try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/SelectionPageScene.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
+          FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/SelectionPageScene.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         arg0.setTitle("FoodFox");
+         Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -63,12 +77,14 @@ public class HomePageSceneController {
 	public void cartbtn(ActionEvent event) {
 	try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/cart.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/cart.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         arg0.setTitle("FoodFox");
+         Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -82,12 +98,14 @@ public class HomePageSceneController {
         public void accountbtn(ActionEvent event) {
 	try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/ProfilePage.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/ProfilePage.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         arg0.setTitle("FoodFox");
+         Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -102,12 +120,14 @@ public class HomePageSceneController {
 	public void logout(ActionEvent event) {
 	try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/login.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/login.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         arg0.setTitle("FoodFox");
+         Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
