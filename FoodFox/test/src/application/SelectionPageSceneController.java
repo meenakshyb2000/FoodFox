@@ -91,43 +91,63 @@ public class SelectionPageSceneController {
 	
 	
 	int q1 = 0 ,q2 = 0 ,q3 = 0 ,q4 = 0 ,q5 = 0 ,q6 = 0 ,q7 = 0 ,q8 = 0 ,q9 = 0 ,q10 = 0 ;
-	
+	int i=0;
 	Connection con;
 	PreparedStatement pst,ps;
 	ResultSet rs,rst;
 
-	
-	
-	
+	String cid, fname, lname, phone, email, location, username, orderno, foodno;
+	int pts;
+	String O_ID;
+        int oid;
 	@FXML
-	public void cartbtn(ActionEvent event) {
-	try
-        {
-        
-		Stage arg0=(Stage) cartbtn.getScene().getWindow();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/cart.fxml"));
-	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
-	 Scene scene=new Scene(root,1300,700);
-         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-         arg0.setScene(scene);
-         arg0.setResizable(false);
-	 arg0.show();
+        private Label mb;
+	
+	public void getID(String id, String a,String b,String c,String d,String e,String f,int g)
+	{
+            cid = id;
+	    fname = a;
+	    lname = b;
+	    phone = c;
+	    email = d;
+	    location = e;
+	    username = f;
+	    pts = g;
+            mb.setText("Hello, "+fname);
+            try
+            {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+                ps=con.prepareStatement("select OID from Order1 order by OID desc limit 1");
+//                ps.setString(1,cid);
+                rs=ps.executeQuery();
+                if(rs.next())
+                {
+                    oid=Integer.parseInt(rs.getString(1).substring(1));
+                    oid++;     
+                    O_ID="O"+oid;
+                    
+                }
+            }
+            catch(ClassNotFoundException | SQLException ex)
+	        {
+	    		System.out.println("Connection failed");
+	    		System.out.println(ex);
+	        }
         }
-        catch(IOException e) 
-        {
-			e.printStackTrace();
-	}
-	}
-	
 	
 	@FXML
-	public void homebtn(ActionEvent event) {
-	try
+        void cartbtn(ActionEvent event) {
+        try
         {
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/cart.fxml"));
          
-		Stage arg0=(Stage) homebtn.getScene().getWindow();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/HomePageScene.fxml"));
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
 	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
+         CartController controller=loader.getController();
+         controller.getID(cid, fname, lname, phone, email, location, username, pts);
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
@@ -137,8 +157,31 @@ public class SelectionPageSceneController {
         catch(IOException e) 
         {
 			e.printStackTrace();
-        }
 	}
+    }
+	
+	 @FXML
+        void homebtn(ActionEvent event) {
+            try
+         {
+             FXMLLoader loader=new FXMLLoader();
+             loader.setLocation(getClass().getResource("/application/HomePageScene.fxml"));
+             Parent root=loader.load();
+             Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+             HomePageSceneController controller=loader.getController();
+             controller.getID(cid, fname, lname, phone, email, location, username, pts);
+             arg0.setTitle("FoodFox"); //arg0 is the primary stage
+             Scene scene=new Scene(root,1300,700);
+             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+             arg0.setScene(scene);
+             arg0.setResizable(false);
+             arg0.show();
+         }
+         catch(IOException e) 
+                    {
+                            e.printStackTrace();
+                    }
+        }
 	public void incQty1(ActionEvent event) 
 	{
 		q1++;
@@ -304,20 +347,22 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			System.out.println(q1);
-	        pst.setString(1,"F01");
-	        pst.setInt(2,q1);
-	        pst.setInt(3,400);
-	        pst.setString(4,"Momo Mia Pizza");
-			pst.execute();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q1);
+                        pst.setFloat(5,400*q1);
+                        pst.setString(6,"Momo Mia Pizza");
+                        pst.execute();
+                }
+                        catch(Exception e)
+                        {
+                                e.printStackTrace();
+                        }
 	}
 
 	@FXML
@@ -326,20 +371,22 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F02");
-	        pst.setInt(2,q2);
-	        pst.setInt(3,350);
-	        pst.setString(4,"Tandoori Paneer Pizza");
-			pst.execute();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q2);
+                        pst.setFloat(5,350*q2);
+                        pst.setString(6,"Tandoori Paneer Pizza");
+                        pst.execute();
+                }
+                catch(Exception e)
+                {
+                        e.printStackTrace();
+                }
 	}
 	@FXML
 	public void add3(ActionEvent event)
@@ -347,15 +394,17 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F03");
-	        pst.setInt(2,q3);
-	        pst.setInt(3,250);
-	        pst.setString(4,"Veggie Supreme");
-			pst.execute();
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q3);
+                        pst.setFloat(5,250*q3);
+                        pst.setString(6,"Veggie Supreme");
+                        pst.execute();
 		}
 		catch(Exception e)
 		{
@@ -369,16 +418,18 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F04");
-	        pst.setInt(2,q4);
-	        pst.setInt(3,280);
-	        pst.setString(4,"Veg Kebab");
-			pst.execute();
-		}
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q4);
+                        pst.setFloat(5,280*q4);
+                        pst.setString(6,"Veg Kebab");
+                        pst.execute();
+                }
 		catch(Exception e)
 		{
 			e.printStackTrace();
@@ -391,15 +442,17 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F05");
-	        pst.setInt(2,q5);
-	        pst.setInt(3,350);
-	        pst.setString(4,"Chicken Supreme");
-			pst.execute();
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q5);
+                        pst.setFloat(5,350*q5);
+                        pst.setString(6,"Chicken Supreme");
+                        pst.execute();
 		}
 		catch(Exception e)
 		{
@@ -413,14 +466,16 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F06");
-	        pst.setInt(2,q6);
-	        pst.setInt(3,340);
-	        pst.setString(4,"Chicken Tikka");
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q6);
+                        pst.setFloat(5,340*q6);
+                        pst.setString(6,"Chicken Tikka");
 			pst.execute();
 		}
 		catch(Exception e)
@@ -434,14 +489,16 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F07");
-	        pst.setInt(2,q7);
-	        pst.setInt(3,450);
-	        pst.setString(4,"Chicken Triple feast");
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q7);
+                        pst.setFloat(5,450*q7);
+                        pst.setString(6,"Chicken Triple feast");
 			pst.execute();
 		}
 		catch(Exception e)
@@ -455,15 +512,15 @@ public class SelectionPageSceneController {
 	{
 		try
 		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F08");
-	        pst.setInt(2,q8);
-	        pst.setInt(3,220);
-	        pst.setString(4,"Veg Kebab Surprise");
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q8);
+                        pst.setFloat(5,220*q8);
+                        pst.setString(6,"Veg Kebab Surprise");
 			pst.execute();
 		}
 		catch(Exception e)
@@ -477,14 +534,16 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F09");
-	        pst.setInt(2,q9);
-	        pst.setInt(3,300);
-	        pst.setString(4,"Double Sausage");
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q9);
+                        pst.setFloat(5,300*q9);
+                        pst.setString(6,"Double Sausage");
 			pst.execute();
 		}
 		catch(Exception e)
@@ -499,14 +558,16 @@ public class SelectionPageSceneController {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","root");
-			String query1="insert into order1 values('','',?,?,?,?)";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
+			String query1="insert into order1 values(?,?,?,?,?,?)";
 			pst=con.prepareStatement(query1);
-			
-	        pst.setString(1,"F10");
-	        pst.setInt(2,q10);
-	        pst.setInt(3,245);
-	        pst.setString(4,"Corn and Cheese");
+                        pst.setString(1,cid);
+                        pst.setString(2,O_ID);
+                        i++;
+                        pst.setString(3,O_ID+"F"+i);
+                        pst.setInt(4,q10);
+                        pst.setFloat(5,245*q10);
+                        pst.setString(6,"Corn and Cheese");
 			pst.execute();
 		}
 		catch(Exception e)
@@ -516,4 +577,3 @@ public class SelectionPageSceneController {
 	}
 	
 }
-
