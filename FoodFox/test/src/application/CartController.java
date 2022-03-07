@@ -1,4 +1,3 @@
-/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
@@ -11,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,14 +23,30 @@ import javafx.stage.Stage;
  * @author meemu
  */
 public class CartController implements Initializable {
+	
+String cid, fname, lname, phone, email, location, username;
+int pts;
 
+public void getID(String id, String a, String b, String c,String d,String e, String f, int g)
+{
+	cid = id;
+    fname = a;
+    lname = b;
+    phone = c;
+    email = d;
+    location = e;
+    username = f;
+    pts = g;
+}
+	
+	
     @FXML
     private Button accountbtn;
     @FXML
     private Button cartbtn;
     @FXML
     private Button logout;
-     @FXML
+    @FXML
     private Label orderitem1;
 
     @FXML
@@ -54,10 +70,24 @@ public class CartController implements Initializable {
     private void accountbtn(ActionEvent event) {
         try
      {
+        // Stage stage=(Stage) logout.getScene().getWindow();
+        // stage.close();
+        // Stage arg0=new Stage();
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/ProfilePage.fxml"));
+         
+         Parent root=loader.load();
+         
          Stage stage=(Stage) logout.getScene().getWindow();
          stage.close();
          Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/ProfilePage.fxml"));
+    	 //Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
+         
+         //Parent root=FXMLLoader.load(getClass().getResource("/application/ProfilePage.fxml"));
+         
+         ProfilePageController controller=loader.getController();
+         controller.getID(cid, fname, lname, phone, email, location, username, 50);
+         
 	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -114,3 +144,4 @@ public class CartController implements Initializable {
     }
     
 }
+
