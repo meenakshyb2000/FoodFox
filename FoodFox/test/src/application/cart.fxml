@@ -14,11 +14,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartController">
    <children>
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#8f5e6c80" height="447.0" layoutX="727.0" layoutY="144.0" stroke="#d4af37" strokeType="INSIDE" width="399.0" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#8f5e6d80" height="447.0" layoutX="59.0" layoutY="144.0" stroke="#d4af37" strokeType="INSIDE" width="609.0" />
-      <Rectangle fill="DODGERBLUE" height="100.0" layoutY="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Rectangle height="100.0" layoutY="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Line endX="99.0" endY="-10.0" layoutX="-88.0" layoutY="27.0" startX="98.0" startY="652.0" stroke="#d4af37" strokeWidth="2.0" />
       <Line endX="100.0" endY="-6.0" layoutX="-79.0" layoutY="34.0" startX="100.0" startY="655.0" stroke="#d4af37" strokeWidth="2.0" />
       <Line endX="1333.0" endY="341.0" layoutX="-68.0" layoutY="349.0" startX="90.0" startY="341.0" stroke="#d4af37" strokeWidth="2.0" />
@@ -298,17 +298,17 @@
                   <Font name="Cambria" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="eptslabel" prefHeight="24.0" prefWidth="185.0" text="  200" textFill="#d4af37" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="eptslabel" prefHeight="24.0" prefWidth="185.0" textFill="#d4af37" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Cambria" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="falabel" prefHeight="24.0" prefWidth="189.0" text="  Rs. 1500.0" textFill="#d4af37" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="falabel" prefHeight="24.0" prefWidth="189.0" textFill="#d4af37" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Cambria" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="rlabel" prefHeight="24.0" prefWidth="181.0" text="  Pizza Hut" textFill="#d4af37" GridPane.columnIndex="1">
+            <Label fx:id="rlabel" prefHeight="24.0" prefWidth="181.0" textFill="#d4af37" GridPane.columnIndex="1">
                <font>
                   <Font name="Cambria" size="20.0" />
                </font>
@@ -329,4 +329,3 @@
       </Button>
    </children>
 </AnchorPane>
-
