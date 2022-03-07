@@ -6,6 +6,7 @@ import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -48,7 +49,7 @@ public class ProfilePageController {
 		 try
 	    	{
 	    		 Class.forName("com.mysql.cj.jdbc.Driver");
-	    		 con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+	    		 con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
 	 
 	    		 ps1=con1.prepareStatement("select * from OrderDetails where CID=? order by OrderID desc limit 1");
 	    		 ps1.setString(1,cid);
@@ -77,9 +78,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl1.setText(rs1.getString(4));
-	        				 q1.setText(rs1.getString(5));
-	        				 a1.setText(rs1.getString(6));
+	        				 fl1.setText(rs1.getString(6));
+	        				 q1.setText(rs1.getString(4));
+	        				 a1.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -87,9 +88,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl2.setText(rs1.getString(4));
-	        				 q2.setText(rs1.getString(5));
-	        				 a2.setText(rs1.getString(6));
+	        				 fl2.setText(rs1.getString(6));
+	        				 q2.setText(rs1.getString(4));
+	        				 a2.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -97,9 +98,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl3.setText(rs1.getString(4));
-	        				 q3.setText(rs1.getString(5));
-	        				 a3.setText(rs1.getString(6));
+	        				 fl3.setText(rs1.getString(6));
+	        				 q3.setText(rs1.getString(4));
+	        				 a3.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -107,9 +108,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl4.setText(rs1.getString(4));
-	        				 q4.setText(rs1.getString(5));
-	        				 a4.setText(rs1.getString(6));
+	        				 fl4.setText(rs1.getString(6));
+	        				 q4.setText(rs1.getString(4));
+	        				 a4.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -117,9 +118,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl5.setText(rs1.getString(4));
-	        				 q5.setText(rs1.getString(5));
-	        				 a5.setText(rs1.getString(6));
+	        				 fl5.setText(rs1.getString(6));
+	        				 q5.setText(rs1.getString(4));
+	        				 a5.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -127,9 +128,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl6.setText(rs1.getString(4));
-	        				 q6.setText(rs1.getString(5));
-	        				 a6.setText(rs1.getString(6));
+	        				 fl6.setText(rs1.getString(6));
+	        				 q6.setText(rs1.getString(4));
+	        				 a6.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -137,9 +138,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl7.setText(rs1.getString(4));
-	        				 q7.setText(rs1.getString(5));
-	        				 a7.setText(rs1.getString(6));
+	        				 fl7.setText(rs1.getString(6));
+	        				 q7.setText(rs1.getString(4));
+	        				 a7.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -147,9 +148,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl8.setText(rs1.getString(4));
-	        				 q8.setText(rs1.getString(5));
-	        				 a8.setText(rs1.getString(6));
+	        				 fl8.setText(rs1.getString(6));
+	        				 q8.setText(rs1.getString(4));
+	        				 a8.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -157,9 +158,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl9.setText(rs1.getString(4));
-	        				 q9.setText(rs1.getString(5));
-	        				 a9.setText(rs1.getString(6));
+	        				 fl9.setText(rs1.getString(6));
+	        				 q9.setText(rs1.getString(4));
+	        				 a9.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -167,9 +168,9 @@ public class ProfilePageController {
 	    			 {
 	    				 while(rs1.next())
 	        			 {
-	        				 fl10.setText(rs1.getString(4));
-	        				 q10.setText(rs1.getString(5));
-	        				 a10.setText(rs1.getString(6));
+	        				 fl10.setText(rs1.getString(6));
+	        				 q10.setText(rs1.getString(4));
+	        				 a10.setText(rs1.getString(5));
 	        			 } 
 	    			 }
 	    			 
@@ -217,15 +218,15 @@ public class ProfilePageController {
     @FXML
     private Label a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
     
-    
-    @FXML
-    void accountbtn(ActionEvent event) {
+     @FXML
+    void homebtn(ActionEvent event) {
         try
      {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/ProfilePage.fxml"));
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/HomePageScene.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
 	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -238,15 +239,17 @@ public class ProfilePageController {
 			e.printStackTrace();
 		}
     }
+   
 
     @FXML
     void cartbtn(ActionEvent event) {
         try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/cart.fxml"));
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/cart.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
 	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -264,10 +267,11 @@ public class ProfilePageController {
     void logout(ActionEvent event) {
         try
         {
-         Stage stage=(Stage) logout.getScene().getWindow();
-         stage.close();
-         Stage arg0=new Stage();
-         Parent root=FXMLLoader.load(getClass().getResource("/application/login.fxml"));
+         FXMLLoader loader=new FXMLLoader();
+         loader.setLocation(getClass().getResource("/application/login.fxml"));
+         
+         Parent root=loader.load();
+	 Stage arg0=(Stage) ((Node)event.getSource()).getScene().getWindow();
 	 arg0.setTitle("FoodFox"); //arg0 is the primary stage
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
