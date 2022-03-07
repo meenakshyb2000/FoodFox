@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionPageSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SelectionPageSceneController">
    <children>
       <Rectangle arcHeight="20.0" arcWidth="20.0" height="163.0" layoutX="82.5" layoutY="126.5" stroke="#915f6d" strokeType="INSIDE" strokeWidth="1.5" width="163.0" />
       <Label layoutX="90.0" layoutY="48.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5; -fx-opacity: 0.6;" text="   P I Z Z A   H U T   " textFill="#8f5e6c80">
@@ -24,7 +24,7 @@
             <Font name="Gabriola" size="40.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutY="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Line endX="1127.0" layoutX="133.0" layoutY="683.0" startX="-105.75" startY="-1.0" stroke="#d4af37" strokeWidth="1.5" />
       <Line endX="1130.0" layoutX="117.0" layoutY="672.0" startX="-100.0" stroke="#d4af37" strokeWidth="1.5" />
       <Line endX="-100.0" endY="-616.0" layoutX="117.0" layoutY="637.0" startX="-100.0" startY="33.25" stroke="#d4af37" strokeWidth="1.5" />
@@ -202,7 +202,7 @@
             <Font name="Cambria" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="935.0" layoutY="51.0" text="Hello, Pavithra Shaji" textFill="#d4af37">
+      <Label fx:id="mb" alignment="CENTER_RIGHT" layoutX="803.0" layoutY="51.0" prefHeight="27.0" prefWidth="322.0" text="Hello, Pavithra Shaji" textAlignment="RIGHT" textFill="#d4af37">
          <font>
             <Font name="Cambria" size="22.0" />
          </font>
