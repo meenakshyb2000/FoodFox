@@ -125,7 +125,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
  if(rs.next())
  {
      System.out.println("Login Success");
-     String id=(String)rs.getString(1);
+     String cid=(String)rs.getString(1);
      String fname= (String)rs.getString(2);
      String lname = (String)rs.getString(3);
      String phone =(String)rs.getString(4); 
@@ -144,7 +144,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
          arg0.setTitle("FoodFox");
          Scene scene=new Scene(root,1300,700);
          HomePageSceneController controller=loader.getController();
-         controller.getID(id,fname, lname, phone, email, location, user, 50);
+         controller.getID(cid,fname, lname, phone, email, location, user, 50);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -244,7 +244,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","me
             Scene scene=new Scene(root,1300,700);
             
             HomePageSceneController controller=loader.getController();
-            controller.getID(count,fname, lname, phone, email, location, username, 50);
+            controller.getID(C_ID,fname, lname, phone, email, location, username, 50);
             
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             arg0.setScene(scene);
