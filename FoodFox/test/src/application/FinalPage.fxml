@@ -13,6 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FinalPageController">
    <children>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" height="340.0" layoutX="868.0" layoutY="240.0" stroke="#915f6d" strokeType="INSIDE" strokeWidth="2.0" width="340.0" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" height="66.0" layoutX="930.0" layoutY="599.5" stroke="#915f6d" strokeType="INSIDE" width="252.4" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="262.0" layoutY="548.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="262.0" layoutY="428.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
@@ -95,7 +96,7 @@
             <Insets />
          </opaqueInsets>
       </Label>
-      <Label alignment="CENTER" layoutX="896.0" layoutY="180.0" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="Calculating your proximity..." textFill="WHITE">
+      <Label alignment="CENTER" layoutX="867.0" layoutY="179.0" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="Calculating your proximity..." textFill="WHITE">
          <font>
             <Font name="Gabriola" size="30.0" />
          </font>
@@ -103,9 +104,9 @@
             <Insets />
          </opaqueInsets>
       </Label>
-      <ImageView fitHeight="234.0" fitWidth="336.0" layoutX="897.0" layoutY="303.0" preserveRatio="true">
+      <ImageView fitHeight="320.0" fitWidth="320.0" layoutX="878.0" layoutY="251.0" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Maps%20Image.jpg" />
+            <Image url="@../img/defaultmap.png" />
          </image>
       </ImageView>
       <Line endX="99.0" endY="-10.0" layoutX="-87.0" layoutY="26.0" startX="98.0" startY="652.0" stroke="#d4af37" strokeWidth="2.0" />
@@ -146,3 +147,4 @@
       </Label>
    </children>
 </AnchorPane>
+
