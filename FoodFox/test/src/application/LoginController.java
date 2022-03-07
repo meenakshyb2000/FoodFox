@@ -116,7 +116,7 @@ public class LoginController implements Initializable{
  {
  Class.forName("com.mysql.cj.jdbc.Driver");
 
-con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
  pst=con.prepareStatement("select * from Customer where CUser=? and CPswd=?");
  pst.setString(1, username);
  pst.setString(2, password);
@@ -125,6 +125,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","r
  if(rs.next())
  {
      System.out.println("Login Success");
+     String id=(String)rs.getString(1);
      String fname= (String)rs.getString(2);
      String lname = (String)rs.getString(3);
      String phone =(String)rs.getString(4); 
@@ -143,7 +144,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","r
          arg0.setTitle("FoodFox");
          Scene scene=new Scene(root,1300,700);
          HomePageSceneController controller=loader.getController();
-         controller.getID(fname, lname, phone, email, location, user, 50);
+         controller.getID(id,fname, lname, phone, email, location, user, 50);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
          arg0.setResizable(false);
@@ -191,7 +192,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","r
              //C_ID=UUID.randomUUID().toString();
 //             System.out.println(C_ID);
            Class.forName("com.mysql.cj.jdbc.Driver");
-          con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+          con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfox","root","meemu2000");
           
           String query3="select * from Customer where cmail=?";
           
@@ -243,7 +244,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","r
             Scene scene=new Scene(root,1300,700);
             
             HomePageSceneController controller=loader.getController();
-            controller.getID(fname, lname, phone, email, location, username, 50);
+            controller.getID(count,fname, lname, phone, email, location, username, 50);
             
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             arg0.setScene(scene);
